@@ -1,0 +1,153 @@
+@import "../../global.scss";
+
+.testimonials {
+  background-color: white;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxkcraerLU3OiI-munJ1Zgnl0pmYmgvw6TbQ&usqp=CAU);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mobile {
+    background-image: none;
+    background: rgb(238, 174, 202);
+    background: radial-gradient(
+      circle,
+      rgba(238, 174, 202, 1) 0%,
+      rgba(148, 187, 233, 1) 100%
+    );
+  }
+
+  @include mobile {
+    justify-content: space-around;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 50px;
+
+    @include mobile {
+      font-size: 20px;
+      overflow: hidden;
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 250px;
+      background-color: #16160d;
+      background: linear-gradient(135deg, #f02fc2 0%, #6094ea 100%);
+      background: linear-gradient(5deg, #e3e3e3 0%, #5d6874 100%);
+      height: 70%;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px -8px black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 20px;
+      transition: all 1s ease;
+
+      @include mobile {
+        height: 180px;
+        margin: 10px 0;
+        overflow: hidden;
+      }
+
+      &.featured {
+        width: 300px;
+        height: 75%;
+        margin: 0 30px;
+
+        @include mobile {
+          width: 250px;
+          height: 180px;
+          margin: 1px;
+          overflow: hidden;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          &.left,
+          &.right {
+            height: 25px;
+            z-index: 2;
+            @include mobile {
+              width: 15px;
+              height: 15px;
+              overflow: hidden;
+            }
+          }
+          &.user {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 30px;
+
+            @include mobile {
+              width: 25px;
+              height: 25px;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+
+      .center {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(250, 244, 245);
+
+        @include mobile {
+          font-size: 10px;
+          padding: 2.6px;
+          overflow: hidden;
+        }
+      }
+      .bottom {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+        h3 {
+          margin-bottom: 5px;
+
+          @include mobile {
+            font-size: 12px;
+            padding: 3px;
+            overflow: hidden;
+          }
+        }
+        h4 {
+          color: rgb(121, 115, 115);
+          @include mobile {
+            font-size: 10px;
+            padding: 3px;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}

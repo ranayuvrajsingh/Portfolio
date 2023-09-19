@@ -1,0 +1,106 @@
+@import "../../global.scss";
+
+.topbar {
+  background-color: white;
+  width: 100%;
+  color: $mainColor;
+  height: 78px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  transition: all 1s ease;
+  overflow: hidden;
+
+  .wrapper {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        font-size: 40px;
+        font-weight: 700;
+        text-decoration: none;
+        color: inherit;
+        margin-right: 40px;
+      }
+
+      .itemContainer {
+        display: flex;
+        align-items: center;
+        margin-right: 30px; // Corrected the class name to itemContainer (camelCase)
+
+        @include mobile {
+          display: none;
+        }
+        .lottie-container {
+          // Added a container for the Lottie animation
+          width: 2.1vw; // Adjust the width as needed
+          height: 2.1vw; // Adjust the height as needed
+          margin-right: 10px; // Adjust the margin as needed to separate items
+          @include mobile {
+            display: none;
+          }
+        }
+
+        .email-container {
+          width: 200px; // Fixed width for email container, adjust as needed
+          display: flex;
+          align-items: center;
+        }
+
+        span {
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .right {
+    .hamburger {
+      width: 32px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+
+      span {
+        width: 99%;
+        height: 3px;
+        background-color: $mainColor;
+        transform-origin: left;
+        transition: all 2s ease;
+      }
+    }
+  }
+
+  &.active {
+    background-color: $mainColor;
+    color: #f2eeee;
+    span {
+      color: #f2eeee;
+    }
+
+    .hamburger {
+      span {
+        &:first-child {
+          background-color: white;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          background-color: white;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

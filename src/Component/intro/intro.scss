@@ -1,0 +1,116 @@
+@import "../../global.scss";
+.intro {
+  background-color: white;
+  display: flex;
+  // background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAIYAswMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAABAgMABAUH/8QAJBAAAgMAAgICAwADAAAAAAAAAAECESEDEjFBUWETInEEMpH/xAAYAQEBAQEBAAAAAAAAAAAAAAABAgADBP/EABsRAQEBAQEBAQEAAAAAAAAAAAABEQIhEkEx/9oADAMBAAIRAxEAPwD67NKqSJOL9IpKaEc/g9c1gSV3IXklgre+QSeFyM5+Sek3IPJ5I3rR35nhPj0SboCxi8kipAnJpsbjSTJeSkJUdLCpJZYoz5Ki7rcIpuyZGWixicGO5Uag/alQO1CwfaVD9CfIw9m0BDqGYFQdhsZksHQ6hQ1HO9EiVlIrAJFEqJtDGCYnWaSB4QbA1hmI98CybSHSBKqKjOaaISWnTPwc83R25JZOjnm7ZWUrRM68wE2x+O78CsaDfoqlTkjawnG9XtD9/kMKbxayf5GNCO6accH6NUFwsjQnCNOzqhpKMHZ0QVEdVhjCg0M/AlnP0yadaN1Eiyikgp+TQjujSpxxAi8Fk8I/TOU/3+TA0xasUug2I3oQchbSRGch2LKNjGRnI5+TfR1OBHkgztzYXK0bqX/GBxOn0znaDFaO42HqOsDiNxLf4Olho48JtZfBlRO8Ggcqx/Y68GjGx3GibVSIuW+TJ2CS/YZJR8ivDpqgXbwD8Cwu6BUisW18hcjCcmK0TnpkNaMRr+mKw/LoaCEKVkPKm0wFGTeazRg6iTQ/5E0SlLS5qsK1osojdvoeKTVsrcGOVxdlOHii1b0Zq5JlYxpUhvRkRnFLwiVOzo5F/wBEjFml8OBFPyy/Gr9CqN4WhHrHCeqqQ0WomlK0asEZC5C/r7YyaElHbGiqFWGYqSvClYI0EaMCStIZaVjx5prcKVGLfjj8mD6OkUhlJHL2wMJfI3l5sdHJKk2iEmn5YzaaJTTQyGQGkvAobCk2WcJF0/6U8GUWjOXybQeFNjuiXVvUh4JsmsEleGUGlZeEN0dwdeCb1io50iiWB/D7GiuoWqDrSJzSRZq0ScdCUyFQQ0FFLKneGaGeC9gbBh5OhLCHHskzqrssJ7FpU/4EUxIeZN0jQd0POFmhGmenZiMPFO7NKfVaNGVYR5rbRM9pkBzUn+pWLVHPCJXjT7KyrGq6Vh/FfodKkVgricbUWJRjSoDj+xXq0Ujx9t8E3rGxLji0tHcvopJKKpE34DdVIRuzBMK8a6RORQWasYUrCBrTFKBsVpN6F6zJCT8dnRGTSIQWovWHPpFDDAoxg45WCx3VE/DO0SZLRZoeCbKfjug3Gc8EViqVlVxRXrQ0l6sL1p1Du7On/Gk/F4S5OKtih/8AHuL8B1lhuY6+umeBjKxZ2cEBJ3hO6GYhcVB9AMYS10K5IWbZKUipDIMpCqQthirZeLw68hqgpDUTaNCPmiqxCJFEiamtf0YJiQ46FcR5C9mjsMPwq3ReeRJcWOysqaOd/oJ29mq9AvgZDWHtSND5EkaLvDYcWU6ZRztHMUX+pFjYLYDGEsBhM0Yk8iOJSg0OnUHAaECnU1MdbWSoI1YbrpOjQihkinHCkNJEXpNqdGHoBtGvOYKsxj0rW416+h5YjGOf6gn2MnWmMJJJsHG3aZjDnilKKIxiKGMYwMaKAwmAFCYxlMFIJjMaMTL7AYlC8F+q+zOJjEII07MYxSn/2Q==);
+  // background-size: cover;
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+
+    .imgContainer {
+      width: 700px;
+      height: 700px;
+      background-color: crimson;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      border-radius: 70%;
+      justify-content: center;
+      overflow: hidden;
+      float: right;
+      @include mobile {
+        align-items: start;
+      }
+      img {
+        height: 99%;
+        margin-left: 10%;
+        margin-top: 20%;
+
+        @include mobile {
+          height: 50%;
+          margin-left: 0;
+          margin-top: 20%;
+        }
+
+        // background-color: crimson;
+      }
+    }
+  }
+
+  .right {
+    flex: 0.5;
+    position: relative;
+  }
+
+  .wrapper {
+    width: 100%;
+    height: 100%;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mobile {
+      padding-left: 0;
+      align-items: center;
+    }
+  }
+
+  h1 {
+    font-size: 60px;
+    margin: 10px 0;
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 30px;
+    margin-bottom: 0; /* Remove the margin at the bottom of h3 */
+    @include mobile {
+      font-size: 20px;
+    }
+    span {
+      font-size: inherit;
+      color: crimson;
+    }
+    // .ityped-cursor {
+    //   animation: blink 1s infinite;
+    // }
+
+    // @keyframes blink {
+    //   50% {
+    //     opacity: 1;
+    //   }
+    //   100% {
+    //     opacity: 0;
+    //   }
+    // }
+  }
+
+  .arrow-link {
+    position: absolute;
+    bottom: 20px; /* Adjust the vertical position as needed */
+    left: 50%; /* Center the arrow horizontally */
+    transform: translateX(-50%); /* Center the arrow horizontally */
+  }
+
+  .arrow-img {
+    width: 30px;
+    animation: arrowBlink 2s infinite;
+  }
+  @keyframes arrowBlink {
+    100% {
+      opacity: 0;
+    }
+  }
+}
