@@ -34,7 +34,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="contact" id="contact">
+    <div className="contact" id="5">
       <div className="left">
         <Lottie
           animationData={logoAnimation} // Use 'animationData' prop instead of 'lottieOptions'

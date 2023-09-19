@@ -25,6 +25,7 @@
       float: right;
       @include mobile {
         align-items: start;
+        margin-top: 10px;
       }
       img {
         height: 99%;
@@ -34,7 +35,7 @@
         @include mobile {
           height: 50%;
           margin-left: 0;
-          margin-top: 20%;
+          margin-top: 10%;
         }
 
         // background-color: crimson;

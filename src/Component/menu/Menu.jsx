@@ -12,19 +12,19 @@ export default function Menu({ menuOpen, setMenuOpen }) {
     <div className={"menu " + (menuOpen ? "active" : "")}>
       <ul>
         <li onClick={handleMenuItemClick}>
-          <a href="#intro">Home</a>
+          <a href="#1">Home</a>
         </li>
         <li onClick={handleMenuItemClick}>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#2">Portfolio</a>
         </li>
         <li onClick={handleMenuItemClick}>
-          <a href="#works">Works</a>
+          <a href="#3">Works</a>
         </li>
         <li onClick={handleMenuItemClick}>
-          <a href="#testimonials">Testimonials</a>
+          <a href="#4">Testimonials</a>
         </li>
         <li onClick={handleMenuItemClick}>
-          <a href="#contact">Contact</a>
+          <a href="#5">Contact</a>
         </li>
       </ul>
     </div>

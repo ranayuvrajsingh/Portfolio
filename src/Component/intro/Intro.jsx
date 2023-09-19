@@ -12,7 +12,7 @@ export default function Intro() {
     });
   }, []);
   return (
-    <div className="intro" id="intro">
+    <div className="intro" id="1">
       <div className="left">
         <div className="imgContainer">
           <img src="assests/YuvJ.png" alt="" />

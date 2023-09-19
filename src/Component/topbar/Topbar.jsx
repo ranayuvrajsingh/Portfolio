@@ -10,20 +10,7 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="wrapper">
         <div className="left">
-          <a
-            href="#contact"
-            className="logo"
-            style={{
-              fontSize: "40px",
-              fontWeight: 700,
-              textDecoration: "none",
-              background: "linear-gradient(to right, #ff0000, #0000ff)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-              display: "inline-block",
-            }}
-          >
+          <a href="#contact" className="logo">
             YuvJ
           </a>
 
@@ -34,10 +21,10 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
               autoplay={true}
               style={{ height: 80, width: 80 }} // Adjust the height and width as needed
             />
+            <a href="tel:8445847591">
+              <span style={{ marginLeft: "-1px" }}>8445847591</span>
+            </a>
           </div>
-          <a href="tel:8445847591">
-            <span style={{ marginLeft: "-1px" }}>8445847591</span>
-          </a>
 
           <div className="itemContainer">
             <Lottie
