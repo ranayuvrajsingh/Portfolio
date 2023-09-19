@@ -1,31 +1,11 @@
 import React from "react";
 import "./topbar.scss";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react"; // Import Lottie React
 
-import yourLottieAnimation1 from "./Animation/Phone.json"; // Replace with your animation file path for the first itemContainer
-import yourLottieAnimation2 from "./Animation/Email.json"; // Replace with your animation file path for the second itemContainer
+import yourLottieAnimation1 from "./Animation/Phone.json";
+import yourLottieAnimation2 from "./Animation/Email.json";
 
 export default function Topbar({ menuOpen, setMenuOpen }) {
-  const animationOptions1 = {
-    loop: true,
-    autoplay: true,
-    animationData: yourLottieAnimation1, // Replace with your animation import for the first itemContainer
-    rendererSettings: {
-      // Hide the cursor provided by Lottie
-      hideOnTransparent: true,
-    },
-  };
-
-  const animationOptions2 = {
-    loop: true,
-    autoplay: true,
-    animationData: yourLottieAnimation2, // Replace with your animation import for the second itemContainer
-    rendererSettings: {
-      // Hide the cursor provided by Lottie
-      hideOnTransparent: true,
-    },
-  };
-
   return (
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="wrapper">
@@ -49,9 +29,10 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
 
           <div className="itemContainer">
             <Lottie
-              options={animationOptions1}
-              height={80} // Adjust the height as needed
-              width={80} // Adjust the width as needed
+              animationData={yourLottieAnimation1}
+              loop={true}
+              autoplay={true}
+              style={{ height: 80, width: 80 }} // Adjust the height and width as needed
             />
           </div>
           <a href="tel:8445847591">
@@ -60,10 +41,15 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
 
           <div className="itemContainer">
             <Lottie
-              style={{ marginTop: "-8px", marginLeft: "50px" }}
-              options={animationOptions2}
-              height={50} // Adjust the height as needed
-              width={50} // Adjust the width as needed
+              animationData={yourLottieAnimation2}
+              loop={true}
+              autoplay={true}
+              style={{
+                marginTop: "-8px",
+                marginLeft: "50px",
+                height: 50,
+                width: 50,
+              }} // Adjust the height and width as needed
             />
             <a href="mailto:ranayuvrajsingh0000@gmail.com">
               <span style={{ marginLeft: "30px" }}>

@@ -1,11 +1,11 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./contact.scss";
-import Lottie from "react-lottie";
-import logoAnimation from "./Animation/Shake.json"; // Replace with the correct path to your Lottie animation JSON file
+import Lottie from "lottie-react";
+import logoAnimation from "./Animation/Shake.json";
 
 export default function Contact() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -17,11 +17,7 @@ export default function Contact() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const lottieOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: logoAnimation,
-  };
+
   let responsiveWidth = "750px";
   let responsiveHeight = "750px";
 
@@ -29,18 +25,25 @@ export default function Contact() {
     responsiveWidth = "100%";
     responsiveHeight = "100%";
   }
+
   const [message, setMessage] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setMessage(true);
   };
+
   return (
     <div className="contact" id="contact">
       <div className="left">
         <Lottie
-          options={lottieOptions}
-          width={responsiveWidth}
-          height={responsiveHeight}
+          animationData={logoAnimation} // Use 'animationData' prop instead of 'lottieOptions'
+          loop={true}
+          autoplay={true}
+          style={{
+            width: responsiveWidth,
+            height: responsiveHeight,
+          }}
           className="lottie-animation"
         />
       </div>
@@ -53,7 +56,7 @@ export default function Contact() {
           <button type="submit" className="btn btn-warning">
             Send
           </button>
-          {message && <span>Thanks ,I'll reply ASAP</span>}
+          {message && <span>Thanks, I'll reply ASAP</span>}
         </form>
       </div>
       <footer className="footer">
