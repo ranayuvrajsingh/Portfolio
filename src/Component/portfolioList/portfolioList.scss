@@ -1,0 +1,17 @@
+@import "../../global.scss";
+.portfolioList {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &.active {
+    background-color: #007bff; /* Change to your desired active background color */
+    color: #fff; /* Change to your desired active text color */
+  }
+}

@@ -1,0 +1,97 @@
+@import "../../global.scss";
+.portfolio {
+  background-color: white;
+  background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAIYAswMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAABAgMABAUH/8QAJBAAAgMAAgICAwADAAAAAAAAAAECESEDEjFBUWETInEEMpH/xAAYAQEBAQEBAAAAAAAAAAAAAAABAgADBP/EABsRAQEBAQEBAQEAAAAAAAAAAAABEQIhEkEx/9oADAMBAAIRAxEAPwD67NKqSJOL9IpKaEc/g9c1gSV3IXklgre+QSeFyM5+Sek3IPJ5I3rR35nhPj0SboCxi8kipAnJpsbjSTJeSkJUdLCpJZYoz5Ki7rcIpuyZGWixicGO5Uag/alQO1CwfaVD9CfIw9m0BDqGYFQdhsZksHQ6hQ1HO9EiVlIrAJFEqJtDGCYnWaSB4QbA1hmI98CybSHSBKqKjOaaISWnTPwc83R25JZOjnm7ZWUrRM68wE2x+O78CsaDfoqlTkjawnG9XtD9/kMKbxayf5GNCO6accH6NUFwsjQnCNOzqhpKMHZ0QVEdVhjCg0M/AlnP0yadaN1Eiyikgp+TQjujSpxxAi8Fk8I/TOU/3+TA0xasUug2I3oQchbSRGch2LKNjGRnI5+TfR1OBHkgztzYXK0bqX/GBxOn0znaDFaO42HqOsDiNxLf4Olho48JtZfBlRO8Ggcqx/Y68GjGx3GibVSIuW+TJ2CS/YZJR8ivDpqgXbwD8Cwu6BUisW18hcjCcmK0TnpkNaMRr+mKw/LoaCEKVkPKm0wFGTeazRg6iTQ/5E0SlLS5qsK1osojdvoeKTVsrcGOVxdlOHii1b0Zq5JlYxpUhvRkRnFLwiVOzo5F/wBEjFml8OBFPyy/Gr9CqN4WhHrHCeqqQ0WomlK0asEZC5C/r7YyaElHbGiqFWGYqSvClYI0EaMCStIZaVjx5prcKVGLfjj8mD6OkUhlJHL2wMJfI3l5sdHJKk2iEmn5YzaaJTTQyGQGkvAobCk2WcJF0/6U8GUWjOXybQeFNjuiXVvUh4JsmsEleGUGlZeEN0dwdeCb1io50iiWB/D7GiuoWqDrSJzSRZq0ScdCUyFQQ0FFLKneGaGeC9gbBh5OhLCHHskzqrssJ7FpU/4EUxIeZN0jQd0POFmhGmenZiMPFO7NKfVaNGVYR5rbRM9pkBzUn+pWLVHPCJXjT7KyrGq6Vh/FfodKkVgricbUWJRjSoDj+xXq0Ujx9t8E3rGxLji0tHcvopJKKpE34DdVIRuzBMK8a6RORQWasYUrCBrTFKBsVpN6F6zJCT8dnRGTSIQWovWHPpFDDAoxg45WCx3VE/DO0SZLRZoeCbKfjug3Gc8EViqVlVxRXrQ0l6sL1p1Du7On/Gk/F4S5OKtih/8AHuL8B1lhuY6+umeBjKxZ2cEBJ3hO6GYhcVB9AMYS10K5IWbZKUipDIMpCqQthirZeLw68hqgpDUTaNCPmiqxCJFEiamtf0YJiQ46FcR5C9mjsMPwq3ReeRJcWOysqaOd/oJ29mq9AvgZDWHtSND5EkaLvDYcWU6ZRztHMUX+pFjYLYDGEsBhM0Yk8iOJSg0OnUHAaECnU1MdbWSoI1YbrpOjQihkinHCkNJEXpNqdGHoBtGvOYKsxj0rW416+h5YjGOf6gn2MnWmMJJJsHG3aZjDnilKKIxiKGMYwMaKAwmAFCYxlMFIJjMaMTL7AYlC8F+q+zOJjEII07MYxSn/2Q==);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  h1 {
+    font-size: 50px;
+    overflow: hidden;
+    @include mobile {
+      font-size: 20px;
+      padding: 10px;
+    }
+  }
+  h3 {
+  }
+
+  ul {
+    margin: 10px;
+    overflow: hidden;
+    padding: 0;
+    list-style: none;
+    display: flex;
+
+    @include mobile {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    li {
+      overflow: hidden;
+      padding: 7px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-right: 50px;
+      border-radius: 10px;
+      cursor: pointer;
+      @include mobile {
+        margin-right: 1px;
+        padding: 10px;
+      }
+      &.active {
+        background-color: $mainColor;
+        color: white;
+      }
+    }
+  }
+
+  .container {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include mobile {
+      width: 100%;
+      height: 100%;
+    }
+
+    .item {
+      width: 220px;
+      overflow: hidden;
+      height: 150px;
+      border-radius: 20px;
+      border: 1px solid lightcyan;
+      margin: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+      transition: all 0.8s ease;
+      cursor: pointer;
+      h3 {
+        position: absolute;
+        font-size: 20px;
+      }
+      img {
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      &:hover {
+        background-color: $mainColor;
+        img {
+          opacity: 0.5;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}
