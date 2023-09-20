@@ -4,6 +4,13 @@ import Lottie from "lottie-react";
 import logoAnimation from "./Animation/Shake.json";
 
 export default function Contact() {
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -28,8 +35,35 @@ export default function Contact() {
 
   const [message, setMessage] = useState(false);
 
-  const handleSubmit = (e) => {
+  const postUserData = (e) => {
+    const { name, value } = e.target;
+    setUserData({
+      ...userData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(userData);
+
+    // Send the userData to Firebase Firestore
+    const res = await fetch(
+      "https://portfolio-yuvj-default-rtdb.firebaseio.com/ContactDetails.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData), // Send the userData object
+      }
+    );
+
+    if (res.ok) {
+      alert("Contact Information Sent");
+    } else {
+      alert("Please Fill the data");
+    }
     setMessage(true);
   };
 
@@ -50,9 +84,43 @@ export default function Contact() {
 
       <div className="right">
         <h2>Contact</h2>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="" id="" placeholder="Email" />
-          <textarea placeholder="Message"></textarea>
+        <form onSubmit={handleSubmit} method="POST">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+            value={userData.name}
+            onChange={postUserData}
+            required
+          />
+
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Email"
+            value={userData.email}
+            onChange={postUserData}
+            required
+          />
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            value={userData.phone}
+            onChange={postUserData}
+            required
+            placeholder="Phone Number"
+          />
+          <textarea
+            name="message"
+            id="message"
+            value={userData.message}
+            onChange={postUserData}
+            required
+            placeholder="Message"
+          ></textarea>
           <button type="submit" className="btn btn-warning">
             Send
           </button>
