@@ -1,0 +1,43 @@
+.popup-notification {
+  position: fixed;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  background: rgb(0, 139, 139);
+  background: radial-gradient(
+    circle,
+    rgba(0, 139, 139, 1) 0%,
+    rgba(95, 97, 95, 1) 100%
+  );
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 9999; /* Make sure it's above other elements */
+  animation: slideIn 0.2s ease-in-out; /* Faster animation */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* ... (rest of your CSS remains the same) */
+
+.popup-content {
+  display: flex;
+  align-items: center;
+  color: #fff; /* Text color */
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: auto;
+  color: #fff; /* Close button color */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

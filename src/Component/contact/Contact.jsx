@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./contact.scss";
 import Lottie from "lottie-react";
 import logoAnimation from "./Animation/Shake.json";
-
+import PopupNotification from "../../Component/popupNotify/PopupNotification";
 export default function Contact() {
   const [userData, setUserData] = useState({
     name: "",
@@ -34,7 +34,7 @@ export default function Contact() {
   }
 
   const [message, setMessage] = useState(false);
-
+  const [showNotification, setShowNotification] = useState(false);
   const postUserData = (e) => {
     const { name, value } = e.target;
     setUserData({
@@ -46,6 +46,10 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(userData);
+
+    // Show the notification immediately
+    // setMessage("Sending contact information...");
+    setShowNotification(true);
 
     // Send the userData to Firebase Firestore
     const res = await fetch(
@@ -60,11 +64,17 @@ export default function Contact() {
     );
 
     if (res.ok) {
-      alert("Contact Information Sent");
+      setMessage("Contact Information Sent");
+      // Clear the form by resetting the userData state
+      setUserData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
     } else {
-      alert("Please Fill the data");
+      setMessage("Please Fill the data");
     }
-    setMessage(true);
   };
 
   return (
@@ -126,6 +136,12 @@ export default function Contact() {
           </button>
           {message && <span>Thanks, I'll reply ASAP</span>}
         </form>
+        {showNotification && (
+          <PopupNotification
+            message={message}
+            onClose={() => setShowNotification(false)}
+          />
+        )}
       </div>
       <footer className="footer">
         <div className="year">&copy; 2023 YuvJ. All rights reserved.</div>
